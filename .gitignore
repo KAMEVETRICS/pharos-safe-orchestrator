@@ -1,0 +1,15 @@
+# Environment & secrets
+.env
+.env.*
+wallet*.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Node
+node_modules/

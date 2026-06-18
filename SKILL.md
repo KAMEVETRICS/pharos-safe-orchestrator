@@ -80,6 +80,20 @@ SIGNER2=<signer2_addr> SIG2=<signature2> \
 bash assets/safe-orchestrator/scripts/execute-tx.sh
 ```
 
+### 6. Add / Remove Owner / Change Threshold
+These are management operations that go through the standard Propose → Sign → Execute flow. The `TO` address is the Safe itself, and `DATA` is the encoded management calldata:
+```bash
+# Add owner (and optionally update threshold)
+DATA=$(cast calldata "addOwnerWithThreshold(address,uint256)" <new_owner> <new_threshold>)
+
+# Remove owner
+DATA=$(cast calldata "removeOwner(address,address,uint256)" <prev_owner> <owner_to_remove> <new_threshold>)
+
+# Change threshold only
+DATA=$(cast calldata "changeThreshold(uint256)" <new_threshold>)
+```
+Then run propose → sign → execute with `TO=$SAFE_ADDR` and the encoded `DATA`.
+
 ## Write Operation Pre-checks
 
 For all operations requiring a private key (Deploy, Sign, Execute), the Agent MUST:

@@ -56,7 +56,6 @@ Once the prerequisites are set, you can invoke the skill via an AI agent by usin
 
 ## Documentation
 
-- **[SKILL.md](./SKILL.md)**: The primary entry point for AI agents. Contains the Capability Index and general guidelines.
-- **[Safe Orchestrator Operations](./references/safe-orchestrator.md)**: The detailed command templates for each supported action.
-- **[Safe Contracts](./references/safe-contracts.md)**: Addresses and reference details for Safe singletons and factories.
+- **[SKILL.md](./SKILL.md)**: The primary entry point for AI agents. Contains all command templates, contract addresses, and guidelines inline.
 - **[Tokens & Networks](./assets/)**: Address dictionaries for supported networks and tokens.
+- **[Bash Scripts](./assets/safe-orchestrator/scripts/)**: The executable scripts for deploy, status, propose, sign, and execute workflows.

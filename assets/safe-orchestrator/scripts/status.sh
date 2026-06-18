@@ -40,11 +40,13 @@ NONCE=$(cast call "$SAFE_ADDR" \
   --rpc-url "$RPC_URL")
 echo "📋 Current nonce: $NONCE"
 
-# ── Native Balance (PHRS) ─────────────────────────────────────────
+# ── Native Balance ─────────────────────────────────────────
 echo ""
 BALANCE=$(cast balance "$SAFE_ADDR" --rpc-url "$RPC_URL")
 BALANCE_ETH=$(cast --from-wei "$BALANCE")
-echo "💰 Native (PHRS): $BALANCE_ETH PHRS"
+CHAIN_ID=$(cast chain-id --rpc-url "$RPC_URL" 2>/dev/null || echo "0")
+if [ "$CHAIN_ID" = "1672" ]; then NATIVE="PROS"; else NATIVE="PHRS"; fi
+echo "💰 Native ($NATIVE): $BALANCE_ETH $NATIVE"
 
 # ── Token Balances (optional) ─────────────────────────────────────
 if [ -n "${TOKEN_ADDRS:-}" ]; then

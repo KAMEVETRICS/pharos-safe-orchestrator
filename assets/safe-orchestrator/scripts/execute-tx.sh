@@ -124,10 +124,10 @@ echo "  Tx hash: $TX_HASH"
 echo ""
 echo "  View on explorer:"
 CHAIN_ID=$(cast chain-id --rpc-url "$RPC_URL")
-if [ "$CHAIN_ID" = "14853" ]; then
-  echo "  https://pharosscan.xyz/tx/$TX_HASH"
-elif [ "$CHAIN_ID" = "688688" ]; then
-  echo "  https://testnet.pharosscan.xyz/tx/$TX_HASH"
+if [ "$CHAIN_ID" = "1672" ]; then
+  echo "  https://www.pharosscan.xyz/tx/$TX_HASH"
+elif [ "$CHAIN_ID" = "688689" ]; then
+  echo "  https://atlantic.pharosscan.xyz/tx/$TX_HASH"
 else
   echo "  https://atlantic.pharosscan.xyz/tx/$TX_HASH"
 fi
